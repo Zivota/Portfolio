@@ -1,0 +1,51 @@
+@import "../variables";
+@import "../mixins";
+
+.loader {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  @include flex(column, center);
+
+  &__backgroundHolder {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  &__background1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0%;
+    width: 100%;
+    background-color: white;
+  }
+
+  &__background2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0%;
+    width: 100%;
+    background-color: white;
+  }
+
+  &__bar {
+    position: relative;
+    width: 15rem;
+    height: 0.5rem;
+    border: 1px solid white;
+    margin: 1rem 0;
+    border-radius: 1rem;
+  }
+
+  &__barPercent {
+    position: absolute;
+    height: 100%;
+    background-color: white;
+  }
+}

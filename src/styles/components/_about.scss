@@ -1,0 +1,167 @@
+@import "../mixins";
+@import "../variables";
+
+.about {
+  min-height: 100vh;
+  width: 100%;
+  @include flex(column, center);
+
+  @media screen and (min-width: map-get($display-width, laptop)) {
+    @include flex(row, space-between);
+  }
+
+  &__infoHolder {
+    padding: 1rem 0;
+    height: 100%;
+    width: 100%;
+
+    h2 {
+      text-transform: uppercase;
+      font-variation-settings: "wght" $bold;
+      color: $secondaryBlack;
+      font-size: 1.6rem;
+    }
+
+    p {
+      padding: 1rem 0;
+      color: $mainGrey;
+      font-variation-settings: "wght" $regular;
+      max-width: 40rem;
+
+      @media screen and (min-width: map-get($display-width, desktop)) {
+        max-width: 70rem;
+      }
+    }
+  }
+
+  &__imgHolder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include flex(column, center);
+  }
+
+  .handHolder {
+    position: relative;
+    height: auto;
+    width: 100%;
+    min-height: 12rem;
+
+    @media screen and (min-width: map-get($display-width, desktop)) {
+      min-height: 15rem;
+    }
+
+    img {
+      position: absolute;
+      max-height: 12rem;
+      min-height: 10rem;
+      min-width: 20rem;
+      max-width: 100%;
+      right: -2rem;
+
+      @media screen and (min-width: map-get($display-width, tablet)) {
+        max-height: 14rem;
+        right: -4rem;
+      }
+
+      @media screen and (min-width: map-get($display-width, laptop)) {
+        max-height: 16em;
+        right: -6rem;
+      }
+
+      @media screen and (min-width: map-get($display-width, desktop)) {
+        max-height: 20rem;
+        right: -10rem;
+      }
+    }
+  }
+
+  .skillCircle {
+    position: relative;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    transform: scale(0.6);
+    bottom: 0;
+
+    @media screen and (min-width: map-get($display-width, tablet)) {
+      transform: scale(0.8);
+    }
+
+    @media screen and (min-width: map-get($display-width, laptop)) {
+      transform: scale(0.9);
+      margin-left: 5rem;
+      margin-bottom: 1rem;
+    }
+
+    @media screen and (min-width: map-get($display-width, desktop)) {
+      transform: scale(0.9);
+      margin-left: 15rem;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      position: absolute;
+      height: 4rem;
+      width: auto;
+      filter: grayscale(100%);
+      transition: 0.1s all ease-in-out;
+
+      &:hover {
+        filter: grayscale(0%);
+        animation: tilt 1s ease-in-out;
+      }
+
+      @keyframes tilt {
+        0% {
+          transform: rotate(-35deg) scale(1.1);
+        }
+        20% {
+          transform: rotate(35deg) scale(1.1);
+        }
+        40% {
+          transform: rotate(-25deg) scale(1.2);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    img:nth-child(1) {
+      bottom: -2rem;
+      left: 7.5rem;
+    }
+
+    img:nth-child(2) {
+      bottom: 3rem;
+      left: -2.2rem;
+      height: 4.5rem;
+    }
+
+    img:nth-child(3) {
+      bottom: 3.5rem;
+      right: -2rem;
+      height: 4.2rem;
+    }
+
+    img:nth-child(4) {
+      top: 4rem;
+      left: -1.5em;
+      height: 4.2rem;
+    }
+
+    img:nth-child(5) {
+      top: 2.8rem;
+      right: -2rem;
+      height: 5.5rem;
+    }
+
+    img:nth-child(6) {
+      top: -2rem;
+      left: 7.3rem;
+      height: 4.5rem;
+    }
+  }
+}
