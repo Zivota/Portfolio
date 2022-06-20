@@ -1,3 +1,11 @@
+# My Personal Portfolio Website
+
+Designed and Developed from scratch, using React and SCSS with a little bit of GSAP animations. It is still work in progress as I always love to make some changes. 
+
+It is currently hosted on netlify on their domain, soon on custom domain.
+## Check it here: zivotakovacevic.netlify.app 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
