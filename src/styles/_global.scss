@@ -107,61 +107,36 @@
   border-radius: 0.5rem;
   cursor: pointer;
   @include flex(center, center);
+  overflow: hidden;
+
+  &:hover::before {
+    height: 120%;
+    transition: 0.5s all ease;
+  }
+
+  &:hover a {
+    color: #f3f3f3;
+    transition: 0.3s all ease;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    z-index: 0;
+  }
 
   a {
     position: absolute;
-    @include flex(center, center);
-    height: 100%;
-    width: 100%;
     text-decoration: none;
     color: $secondaryBlack;
-    opacity: 0;
-    border-radius: 0.5rem;
-  }
-}
-
-.animatedBtn:hover a {
-  animation: moveFromRight 0.5s ease forwards;
-}
-
-.animatedBtn:hover::before {
-  animation: moveRight 1s ease forwards;
-}
-
-.animatedBtn::before {
-  position: absolute;
-  top: 0;
-  content: attr(data-content);
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.5rem;
-  color: $secondaryBlack;
-  @include flex(center, center);
-  opacity: 1;
-}
-
-@keyframes moveRight {
-  from {
-    left: 0;
-    opacity: 1;
-  }
-  to {
-    left: 7rem;
-    opacity: 0;
-  }
-}
-
-@keyframes moveFromRight {
-  from {
-    left: -7rem;
-    opacity: 0;
-  }
-  to {
-    left: 0;
-    opacity: 1;
-    background-color: $mainBlack;
-    color: white;
+    background-color: none;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    top: 25%;
   }
 }
 

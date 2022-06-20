@@ -22,7 +22,7 @@ const About = () => {
             existing ones.
           </p>
           <Button className="animatedBtn" dataContent="Read more">
-            <Link to="/moreaboutme"> Read more</Link>
+            <Link to="/moreaboutme">Read more</Link>
           </Button>
         </div>
         <div className="about__infoHolder">

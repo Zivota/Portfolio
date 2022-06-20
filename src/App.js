@@ -13,7 +13,6 @@ const App = () => {
 
   const el = useRef();
   const q = gsap.utils.selector(el);
-  const t2 = useRef();
   const [isLoaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
@@ -28,8 +27,8 @@ const App = () => {
           start: "top center",
         },
         opacity: 0,
-        top: "-2rem",
-        duration: 1,
+        top: "-5rem",
+        duration: 0.9,
         ease: "power4.out",
       });
       gsap.from(q(".about__infoHolder"), {
@@ -43,26 +42,16 @@ const App = () => {
         ease: "power4.out",
         stagger: 0.5,
       });
-      gsap.from(".about__imgHolder", {
-        scrollTrigger: {
-          trigger: ".about__imgHolder",
-          start: "top center",
-        },
-        opacity: 0,
-        duration: 1,
-        ease: "power1.in",
-        delay: 1,
-      });
       gsap.from(q(".project"), {
         scrollTrigger: {
           trigger: ".project",
           start: "top center",
         },
         opacity: 0,
-        transform: "scale(0.9)",
-        duration: 0.5,
+        transform: "translateX(-4rem)",
+        duration: 0.3,
         ease: "power4.in",
-        stagger: 0.8,
+        stagger: 0.5,
       });
     }
   }, [isLoaded]);
