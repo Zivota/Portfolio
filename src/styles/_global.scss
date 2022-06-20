@@ -108,6 +108,7 @@
   cursor: pointer;
   @include flex(center, center);
   overflow: hidden;
+  margin: 0 0.1rem;
 
   &:hover::before {
     height: 120%;

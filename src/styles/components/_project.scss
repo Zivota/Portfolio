@@ -69,10 +69,10 @@
   }
 
   &__btnHolder {
-    @include flex(row, space-between);
+    @include flex(row, center);
     width: 100%;
     max-width: 21rem;
-    padding: 2rem 1.5rem 0 1.5rem;
+    padding: 2rem 0 0 0;
   }
 }
 
