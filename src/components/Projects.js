@@ -1,11 +1,23 @@
 import ecommerceImg from "../assets/ecommerce.jpg";
-import chatappImg from "../assets/chatapp.png";
 import blogrImg from "../assets/blogr.jpg";
-import mmImg from "../assets/moneymanagament.jpg";
+import portfolioImg from "../assets/portfolio.jpg";
+import weatherImg from "../assets/weather.jpg";
+import timupsImg from "../assets/timups.jpg";
 import Project from "./Project";
 
 const Projects = () => {
   const projects = [
+    {
+      img: timupsImg,
+      alt: "ecommerce app",
+      title: "E-Commerce Watch Store",
+      subtitle: "Complete e-Commerce Application",
+      brief:
+        "Full e-Commerce Web App, completly responsive, made from scratch using React, SCSS, React Router and React Context API for state management, with advanced cart, and many other features. For more description visit github.",
+      style: "project",
+      github: "https://github.com/Zivota/e-commerce-webapp",
+      website: "https://timupsreact.netlify.app/",
+    },
     {
       img: ecommerceImg,
       alt: "ecommerce app",
@@ -13,20 +25,20 @@ const Projects = () => {
       subtitle: "Front-End Mentor Challenge",
       brief:
         "Dynamic, completly responsive app made from scratch using React with functionalities like add-to-cart, remove-from-cart, amount control, responsive galleries, light box gallery etc...",
-      style: "project",
+      style: "project reverse",
       github: "https://github.com/Zivota/ecommerce-product-app",
       website: "https://reactecommapp.netlify.app/",
     },
     {
-      img: chatappImg,
-      alt: "chat app",
-      title: "Chat App",
+      img: weatherImg,
+      alt: "weather app",
+      title: "Modern Weather App",
       subtitle: "APIs Practice",
       brief:
-        "Live chat app made using React with implemented google authentication from Firebase and Chat Engine Api.",
-      style: "project reverse",
-      github: "https://github.com/Zivota/chat-app",
-      website: "https://reactchatappv1.netlify.app/",
+        "Dynamic app made from scratch with React, CSS-modules and Context API, that asynchronously collects data from two different APIs, 'ipwho' and 'openweather'. It shows the weather for your current location on the first entry on the website. You can also search for any place on earth and get weather info for today and the next 5 days. Light and Dark modes are also available.",
+      style: "project",
+      github: "https://github.com/Zivota/React-Weather-App",
+      website: "https://weatherappr.netlify.app/",
     },
 
     {
@@ -36,21 +48,21 @@ const Projects = () => {
       subtitle: "Front-End Mentor Challenge",
       brief:
         "Completely responsive landing page with modern design provided by Front-End-Mentor app. Project is made with HTML, Vanilla Javascript and Sass. ",
-      style: "project",
+      style: "project reverse",
       github: "https://github.com/Zivota/BlogrWebsite",
       website: "https://blogrwebsitejs.netlify.app/",
     },
 
     {
-      img: mmImg,
-      alt: "chat app",
-      title: "Money Management and Week Scheduler App",
-      subtitle: "Javascript fundamentals",
+      img: portfolioImg,
+      alt: "portfolio",
+      title: "Personal Portfolio",
+      subtitle: "Portfolio Website",
       brief:
-        "App with dynamic UI which deals with various inputs and based on data affects DOM elements. It allows you to enter or delete your name, incomes, expenses, or schedule for every day in week. It also use Local storage to store all data.",
-      style: "project reverse",
-      github: "https://github.com/Zivota/Money-Management-App",
-      website: "https://mmappjs.netlify.app/",
+        "My own portfolio website which I've designed and developed from scratch using React, SCSS, GSAP and React Router.",
+      style: "project",
+      github: "https://github.com/Zivota/Portfolio",
+      website: "https://zivotakovacevic.netlify.app/",
     },
   ];
 
