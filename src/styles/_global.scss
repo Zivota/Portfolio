@@ -1,0 +1,247 @@
+@import "./_variables.scss";
+@import "./mixins";
+
+.app {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  padding: 0 2rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+
+  @media screen and (min-width: map-get($display-width, tablet)) {
+    padding: 0 4rem;
+  }
+
+  @media screen and (min-width: map-get($display-width, laptop)) {
+    padding: 0 6rem;
+  }
+
+  @media screen and (min-width: map-get($display-width, desktop)) {
+    padding: 0 10rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.navbar {
+  @include flex(row, space-between);
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.logo {
+  @include flex(column, center);
+
+  h4 {
+    color: $secondaryBlack;
+    font-size: 1.1rem;
+    font-variation-settings: "wght" $regular;
+    letter-spacing: 0.5px;
+  }
+
+  h5 {
+    color: $mainGrey;
+    font-variation-settings: "wght" $thin;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-top: 0.1rem;
+  }
+}
+
+#backArrow {
+  @include flex(row, center);
+  text-decoration: none;
+  color: $secondaryBlack;
+  font-variation-settings: "wght" $semi-bold;
+
+  img {
+    padding: 0 1rem;
+    height: 2rem;
+  }
+}
+
+.blueButton {
+  position: relative;
+  width: 10rem;
+  height: 2.5rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: $mainBlue;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.1s all ease;
+  @include flex(center, center);
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  a {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+    width: 100%;
+    @include flex(center, center);
+  }
+}
+
+.animatedBtn {
+  position: relative;
+  height: 2rem;
+  width: 8rem;
+  background-color: transparent;
+  border: 1px solid $mainGrey;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  @include flex(center, center);
+  overflow: hidden;
+  margin: 0 0.1rem;
+
+  &:hover::before {
+    height: 120%;
+    transition: 0.5s all ease;
+  }
+
+  &:hover a {
+    color: #f3f3f3;
+    transition: 0.3s all ease;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    z-index: 0;
+  }
+
+  a {
+    position: absolute;
+    text-decoration: none;
+    color: $secondaryBlack;
+    background-color: none;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    top: 25%;
+  }
+}
+
+.absoluteBackground {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  @include flex(column, center);
+
+  @media screen and (min-width: map-get($display-width, laptop)) {
+    @include flex(row, space-evenly);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100vw;
+    z-index: 1;
+    background-image: url("../assets/abstract.jpg");
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: -2rem;
+
+    @media screen and (min-width: map-get($display-width, tablet)) {
+      left: -4rem;
+    }
+
+    @media screen and (min-width: map-get($display-width, laptop)) {
+      left: -6rem;
+    }
+
+    @media screen and (min-width: map-get($display-width, desktop)) {
+      left: -10rem;
+    }
+  }
+}
+
+.navHolder {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.textCard {
+  width: 100%;
+  min-height: 30rem;
+  max-width: 40rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  @include flex(column, center);
+  padding: 0 1rem;
+  text-align: center;
+  z-index: 2;
+  margin-top: 8rem;
+  box-shadow: 5px 5px 15px #e8e8e8;
+
+  @media screen and (min-width: map-get($display-width, laptop)) {
+    margin-top: 5rem;
+  }
+
+  &:nth-child(3) {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+
+    @media screen and (min-width: map-get($display-width, laptop)) {
+      margin-top: 5rem;
+      margin-left: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  h2 {
+    padding: 1rem 0;
+    font-variation-settings: "wght" $bold;
+    font-size: 1.5rem;
+    color: $secondaryBlack;
+  }
+
+  p {
+    width: 90%;
+    color: $mainGrey;
+    line-height: 1.4;
+    font-variation-settings: "wght" $thin;
+  }
+
+  button {
+    margin-top: 1.5rem;
+  }
+
+  .softSkills {
+    width: auto;
+    text-align: left;
+    margin-left: 1.5rem;
+
+    span {
+      position: relative;
+      font-size: 1.2rem;
+      color: $mainBlue;
+      font-variation-settings: "wght" $bold;
+    }
+  }
+}

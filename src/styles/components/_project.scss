@@ -1,0 +1,84 @@
+@import "../_variables";
+@import "../_mixins";
+
+.project {
+  width: 100%;
+  @include flex(column, center);
+  margin: 3rem auto;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 16px #e8e8e8, -7px -7px 16px #ffffff;
+
+  @media screen and (min-width: map-get($display-width, laptop)) {
+    @include flex(row, space-between);
+    width: 80%;
+  }
+
+  &__imageHolder {
+    height: auto;
+    width: 100%;
+    text-align: center;
+
+    @media screen and (min-width: map-get($display-width, laptop)) {
+      width: 50%;
+    }
+
+    img {
+      min-height: 10rem;
+      max-height: 25rem;
+      max-width: 100%;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+  }
+
+  &__infoHolder {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    @include flex(column, center);
+
+    @media screen and (min-width: map-get($display-width, laptop)) {
+      width: 50%;
+    }
+
+    h2 {
+      color: $secondaryBlack;
+      font-variation-settings: "wght" $thin;
+      font-size: 1.4rem;
+    }
+
+    h4 {
+      color: $mainGrey;
+      font-size: 0.7rem;
+      font-variation-settings: "wght" $semi-bold;
+      letter-spacing: 0.5px;
+    }
+
+    h3 {
+      padding: 1rem 0;
+      font-variation-settings: "wght" $regular;
+      color: $secondaryBlack;
+      font-size: 1.1rem;
+    }
+
+    p {
+      color: $mainGrey;
+      font-variation-settings: "wght" $thin;
+      max-width: 30rem;
+    }
+  }
+
+  &__btnHolder {
+    @include flex(row, center);
+    width: 100%;
+    max-width: 21rem;
+    padding: 2rem 0 0 0;
+  }
+}
+
+.reverse {
+  @media screen and (min-width: map-get($display-width, laptop)) {
+    @include flex(row-reverse, space-between);
+    width: 80%;
+  }
+}

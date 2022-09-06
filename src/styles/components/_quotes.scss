@@ -1,0 +1,96 @@
+@import "../variables";
+@import "../mixins";
+
+.quote {
+  position: relative;
+  @include flex(column, center);
+  min-height: 100vh;
+  width: 100%;
+
+  h1 {
+    position: relative;
+    display: inline-block;
+    color: $secondaryBlack;
+    overflow: hidden;
+    font-variation-settings: "wght" $extra-bold;
+    font-size: 3rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: clip-path 275ms ease;
+    &:hover::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    &::before {
+      position: absolute;
+      content: attr(data-content);
+      color: white;
+      clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+      transition: clip-path 275ms ease;
+      text-shadow: -1px 1px 2px $secondaryBlack, 1px 1px 2px $secondaryBlack,
+        1px -1px 0 $secondaryBlack, -1px -1px 0 $secondaryBlack;
+    }
+
+    @media screen and (min-width: map-get($display-width, tablet)) {
+      font-size: 5rem;
+    }
+
+    @media screen and (min-width: map-get($display-width, laptop)) {
+      font-size: 6rem;
+      padding: 0.5rem;
+    }
+
+    @media screen and (min-width: map-get($display-width, desktop)) {
+      font-size: 7rem;
+    }
+  }
+
+  &__pixelSpan {
+    border: 1px solid $secondaryBlack;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-top: 2rem;
+    border-radius: 0.2rem;
+    animation: rotate 5s infinite forwards;
+
+    @media screen and (min-width: map-get($display-width, desktop)) {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+  .quote__white {
+    color: white;
+    text-shadow: -1px 1px 2px $secondaryBlack, 1px 1px 2px $secondaryBlack,
+      1px -1px 0 $secondaryBlack, -1px -1px 0 $secondaryBlack;
+    transition: clip-path 275ms ease;
+    &:hover::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    &::before {
+      position: absolute;
+      content: attr(data-content);
+      color: $secondaryBlack;
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+      transition: clip-path 0.3s ease-in-out;
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: translateY(-2rem) rotate(0deg);
+      background-color: white;
+    }
+
+    25% {
+      transform: translateY(2rem) rotate(360deg);
+      background-color: $secondaryBlack;
+    }
+
+    50% {
+      transform: translateY(-2rem) rotate(0deg);
+      background-color: white;
+    }
+    100% {
+      transform: translateY(-2rem) rotate(0deg);
+    }
+  }
+}

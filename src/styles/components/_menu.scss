@@ -1,0 +1,115 @@
+@import "../mixins";
+@import "../variables";
+
+.burgerDiv {
+  width: 2.3rem;
+  height: 0.7rem;
+  @include flex(column, space-between);
+  cursor: pointer;
+
+  span {
+    width: 100%;
+    height: 2px;
+    background-color: $mainBlack;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.active {
+  span:nth-child(1) {
+    transform: translateY(6px) rotate(40deg);
+    width: 80%;
+  }
+  span:nth-child(2) {
+    transform: translateY(-3px) rotate(-40deg);
+    width: 80%;
+  }
+}
+
+.disabled {
+  span:nth-child(1) {
+    transform: translateY(0) rotate(0);
+    width: 100%;
+  }
+  span:nth-child(2) {
+    transform: translateY(0) rotate(0);
+    width: 100%;
+  }
+}
+
+.menu {
+  position: fixed;
+  right: 0rem;
+  bottom: 0;
+  text-align: left;
+  list-style: none;
+  @include flex(column, center);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem 1rem 0 0;
+  z-index: 10;
+  background-color: $mainBlack;
+
+  animation: popup 0.3s ease-in;
+
+  @keyframes popup {
+    from {
+      bottom: -20rem;
+    }
+    to {
+      bottom: 0;
+    }
+  }
+
+  span {
+    height: 10rem;
+    width: 1px;
+    background-color: $mainGrey;
+  }
+
+  li {
+    padding: 0.5rem 2rem;
+    @media screen and (min-width: map-get($display-width, tablet)) {
+      padding: 0.5rem 4rem;
+    }
+
+    @media screen and (min-width: map-get($display-width, laptop)) {
+      padding: 0.5rem 6rem;
+    }
+
+    @media screen and (min-width: map-get($display-width, desktop)) {
+      padding: 0.7rem 10rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-variation-settings: "wght" $thin;
+  }
+
+  button {
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 50%;
+    border: none;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    background-color: $mainGrey;
+    transition: 0.1s all ease-in-out;
+
+    &:hover {
+      background-color: $mainYellow;
+
+      img {
+        transform: scale(0.7);
+      }
+    }
+
+    img {
+      transition: 0.2s all ease-in-out;
+      height: 100%;
+      width: 100%;
+      transform: scale(0.4);
+    }
+  }
+}
